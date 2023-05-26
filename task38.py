@@ -113,7 +113,6 @@ while value != 6:
         contact = open('file.txt', 'w', encoding='utf-8')
         upadate_contact_list(changed_contact_list, contact)
         contact.close()
-    elif value == 6:
-        print('До свиданья!')
+    elif value == 6: print()
     else: print('Введено неверное значение')
     value = int(input('Введите требуемое действие со справочником:\n\t1 - Показать все контакты \n\t2 - Добавить контакт\n\t3 - Найти контакт\n\t4 - Изменить контакт\n\t5 - Удалить контакт\n\t6 - Выход\n'))
