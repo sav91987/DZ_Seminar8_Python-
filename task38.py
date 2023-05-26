@@ -95,14 +95,14 @@ while value != 6:
         contact = open('file.txt', 'r+', encoding='utf-8')
         changed_contact_list = get_contact_list(contact)
         search_list, index_for_change = search_contact(changed_contact_list)
-        if search_list == '-': print('Ничего не найдено')
+        if search_list =='-': print('Ничего не найдено')
         else: 
             change_contact(changed_contact_list, search_list, index_for_change)
         contact.close()
         contact = open('file.txt', 'w', encoding='utf-8')
         upadate_contact_list(changed_contact_list, contact)
         contact.close()
-        elif value == 5:
+    elif value == 5:
         contact = open('file.txt', 'r+', encoding='utf-8')
         changed_contact_list = get_contact_list(contact)
         search_list, index_for_change = search_contact(changed_contact_list)
