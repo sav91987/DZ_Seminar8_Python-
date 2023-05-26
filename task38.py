@@ -8,7 +8,9 @@ def get_contact_list(contact):
     for i in range(len(my_list)):
         my_list[i] = tuple(my_list[i].split(','))
     my_list.pop()
+    print(my_list)
     return my_list
+    
 
 def add_contact(contact_list, contact):
     fio = input('Введите ФИО нового контакта: ')
@@ -16,7 +18,7 @@ def add_contact(contact_list, contact):
 
     contact_list.append((fio, phone_number))
     contact.seek(0, os.SEEK_END)
-    contact.write(f';{fio},{phone_number}')
+    contact.write(f'{fio},{phone_number};')
 
     return contact_list
 
@@ -107,6 +109,7 @@ while value != 6:
         changed_contact_list = get_contact_list(contact)
         search_list, index_for_change = search_contact(changed_contact_list)
         del_contact(changed_contact_list, index_for_change)
+        contact.close()
         contact = open('file.txt', 'w', encoding='utf-8')
         upadate_contact_list(changed_contact_list, contact)
         contact.close()
